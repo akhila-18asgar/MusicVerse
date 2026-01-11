@@ -1,0 +1,34 @@
+<div class="container py-5">
+  @if(product){
+    <div class="row">
+      
+      <div class="col-lg-6">
+        <img [src]="product.image" alt="{{ product.title }}" class="img-fluid rounded" />
+      </div>
+
+     
+      <div class="col-lg-6">
+        <h1 class="fw-bold mb-3">{{ product.title }}</h1>
+        <p class="text-muted fs-5 mb-2">Artist: {{ product.artist }}</p>
+        <p class="text-muted fs-5 mb-4">Genre: {{ product.genre }}</p>
+
+        <div class="mb-4">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-success">Rating: {{ product.rating }}/5</span>
+          </div>
+        </div>
+
+        <p class="fs-5 text-muted lh-lg mb-4">
+          {{ product.fullDesc }}
+        </p>
+      </div>
+    </div>
+
+  }
+  
+@else
+{    <div class="text-center py-5">
+      <p class="text-muted fs-5">Loading song details...</p>
+    </div>
+}
+</div>
